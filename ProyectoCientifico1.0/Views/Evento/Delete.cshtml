@@ -1,0 +1,36 @@
+﻿@model CapaEntidad.Evento
+
+@{
+    ViewBag.Title = "Eliminar Evento";
+}
+
+<h2>Eliminar Evento</h2>
+
+<h3>¿Está seguro que desea eliminar este evento?</h3>
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Nombre</dt>
+        <dd>@Html.DisplayFor(model => model.Nombre_Evento)</dd>
+
+        <dt>Descripción</dt>
+        <dd>@Html.DisplayFor(model => model.Descripcion_Evento)</dd>
+
+        <dt>Fecha</dt>
+        <dd>@Html.DisplayFor(model => model.Fecha_Evento)</dd>
+
+        <dt>Lugar</dt>
+        <dd>@Html.DisplayFor(model => model.Lugar_Evento)</dd>
+
+        <dt>Activo</dt>
+        <dd>@Html.DisplayFor(model => model.Activo_Evento)</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+    }
+</div>

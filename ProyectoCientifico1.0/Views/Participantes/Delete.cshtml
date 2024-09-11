@@ -1,0 +1,38 @@
+﻿@model CapaEntidad.Participantes
+
+@{
+    ViewBag.Title = "Eliminar Participante";
+}
+
+<h2>Eliminar Participante</h2>
+
+<h3>¿Está seguro de que desea eliminar este participante?</h3>
+<div>
+    <h4>Participante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Nombre</dt>
+        <dd>@Model.Nombre_Participantes</dd>
+
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+
+        <dt>ID Evento</dt>
+        <dd>@Model.ID_Evento</dd>
+    </dl>
+
+    @using (Html.BeginForm("DeleteConfirmed", "Participantes", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>
+
+<p>
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>

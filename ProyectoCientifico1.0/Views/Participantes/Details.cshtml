@@ -1,0 +1,25 @@
+﻿@model CapaEntidad.Participantes
+
+@{
+    ViewBag.Title = "Detalles del Participante";
+}
+
+<h2>Detalles del Participante</h2>
+
+<div>
+    <h4>Participante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Nombre</dt>
+        <dd>@Model.Nombre_Participantes</dd>
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+        <dt>ID Evento</dt>
+        <dd>@Model.ID_Evento</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>

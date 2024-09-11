@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CapaEntidad.Participantes>
+
+@{
+    ViewBag.Title = "Participantes";
+}
+
+<h2>Participantes</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Participantes")" class="btn btn-primary">Crear Nuevo Participante</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Participante</th>
+            <th>Nombre Participante</th>
+            <th>Email</th>
+            <th>Evento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var participante in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => participante.ID_Participantes)</td>
+                <td>@Html.DisplayFor(modelItem => participante.Nombre_Participantes)</td>
+                <td>@Html.DisplayFor(modelItem => participante.Email)</td>
+                <td>@Html.DisplayFor(modelItem => participante.ID_Evento)</td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id = participante.Id }) |
+                    @Html.ActionLink("Editar", "Edit", new { id = participante.Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = participante.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

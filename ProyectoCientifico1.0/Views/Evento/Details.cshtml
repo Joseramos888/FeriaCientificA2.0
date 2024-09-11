@@ -1,0 +1,35 @@
+﻿@model CapaEntidad.Evento
+
+@{
+    ViewBag.Title = "Detalles del Evento";
+}
+
+<h2>Detalles del Evento</h2>
+
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>ID</dt>
+        <dd>@Model.Id_Evento</dd>
+
+        <dt>Nombre</dt>
+        <dd>@Model.Nombre_Evento</dd>
+
+        <dt>Descripción</dt>
+        <dd>@Model.Descripcion_Evento</dd>
+
+        <dt>Fecha</dt>
+        <dd>@Model.Fecha_Evento</dd>
+
+        <dt>Lugar</dt>
+        <dd>@Model.Lugar_Evento</dd>
+
+        <dt>Activo</dt>
+        <dd>@Model.Activo_Evento</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_Evento }) |
+    @Html.ActionLink("Volver a la Lista", "Index")
+</p>
